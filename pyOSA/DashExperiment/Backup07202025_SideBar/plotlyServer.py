@@ -18,7 +18,7 @@ class plotlyServer:
         self._server = kwargs.get("server", "10.0.0.48")
         self._path = kwargs.get("path", "/usr/share/nginx/html/")
         self._username = kwargs.get("username", "greg")
-        self._password = kwargs.get("password", "Gaia74200<3")
+        self._password = kwargs.get("password", os.getenv("PLOTLY_SERVER_PASSWORD"))
         self._url = kwargs.get("url", "https://nanophotonicsjqi.io/plots/")
 
         if not self._fig is None:
@@ -83,7 +83,6 @@ class plotlyServer:
 # path = '/usr/share/nginx/html/'
 # ssh = SSHClient()
 # ssh.load_system_host_keys()
-# ssh.connect(server, username='greg', password='Gaia74200<3')
 
 # with SCPClient(ssh.get_transport()) as scp:
 # scp.put(file, path + filename)
